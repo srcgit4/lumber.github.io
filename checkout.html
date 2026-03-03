@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Checkout — Lumber.ca</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <a class="brand" href="index.html"><span class="brand__badge">Lumber</span><span class="brand__dot">.ca</span></a>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Search products..." />
+        <button id="searchBtn" class="btn btn--brown">Search</button>
+      </div>
+      <div class="topbar__icons">
+        <a class="iconbtn" href="dashboard.html" aria-label="Account">👤</a>
+        <button class="iconbtn" id="openCartBtn" aria-label="Cart">🛒<span class="cartCount" id="cartCount">0</span></button>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="wrap nav__inner">
+        <a class="nav__link" href="index.html">Home</a>
+        <a class="nav__link" href="products.html">Products</a>
+        <a class="nav__link" href="deals.html">Deals</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__link" href="about.html">About</a>
+        <a class="nav__link is-active" href="checkout.html">Checkout</a>
+      </div>
+    </nav>
+  </header>
+
+  <aside class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Cart">
+      <div class="drawer__head">
+        <div class="drawer__title">Your Cart</div>
+        <button class="iconbtn" id="closeCartBtn" aria-label="Close cart">✕</button>
+      </div>
+      <div class="drawer__body" id="cartItems"></div>
+      <div class="drawer__foot">
+        <div class="drawer__row"><span>Subtotal</span><strong id="cartSubtotal">$0.00</strong></div>
+        <button class="btn btn--brown w-100" id="placeOrderBtn">Place Order</button>
+      </div>
+    </div>
+    <button class="drawer__backdrop" id="drawerBackdrop" aria-label="Close"></button>
+  </aside>
+
+  <main class="section">
+    <div class="wrap checkout">
+      <div class="checkout__left card">
+        <h2>Checkout</h2>
+        <div class="formGrid">
+          <label>Full Name<input type="text" placeholder="John Doe" /></label>
+          <label>Email<input type="email" placeholder="john@email.com" /></label>
+          <label>Address<input type="text" placeholder="Street address" /></label>
+          <label>City<input type="text" placeholder="City" /></label>
+          <label>Province<input type="text" placeholder="AB" /></label>
+          <label>Postal Code<input type="text" placeholder="T2X 0X0" /></label>
+        </div>
+        <button class="btn btn--brown" id="checkoutPayBtn">Continue</button>
+      </div>
+
+      <div class="checkout__right card">
+        <h3>Order Summary</h3>
+        <div id="summaryItems" class="summaryItems"></div>
+        <div class="drawer__row"><span>Total</span><strong id="summaryTotal">$0.00</strong></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <div><div class="footer__title">LUMBER.CA</div><div class="muted">Canada-wide supply</div><div class="muted">Calgary, AB</div></div>
+      <div><div class="footer__title">LINKS</div><a href="products.html">Products</a><a href="deals.html">Deals</a><a href="contact.html">Contact</a></div>
+      <div><div class="footer__title">LEGAL</div><a href="#">Privacy</a><a href="#">Terms</a></div>
+      <div><div class="footer__title">SOCIAL</div><div class="socialRow"><span class="social">◎</span><span class="social">◯</span><span class="social">◍</span></div></div>
+    </div>
+    <div class="footer__bottom">© <span id="year"></span> Lumber.ca</div>
+  </footer>
+
+  <script src="assets/app.js"></script>
+  <script>renderCheckout();</script>
+</body>
+</html>
